@@ -1,0 +1,72 @@
+import * as React from "react";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
+import { Plus, Minus } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+/* Root */
+function Accordion({ ...props }) {
+  return <AccordionPrimitive.Root data-slot="accordion" {...props} />;
+}
+
+/* Item — IMPORTANT: overflow-hidden */
+function AccordionItem({ className, ...props }) {
+  return (
+    <AccordionPrimitive.Item
+      data-slot="accordion-item"
+      className={cn("border-b last:border-b-0 overflow-hidden", className)}
+      {...props}
+    />
+  );
+}
+
+/* Trigger — NO animation here */
+function AccordionTrigger({ className, children, ...props }) {
+  return (
+    <AccordionPrimitive.Header className="flex">
+
+      <AccordionPrimitive.Trigger
+        data-slot="accordion-trigger"
+        className={cn(
+          "group flex flex-1 items-start justify-between gap-4 p-4 text-left text-sm font-medium outline-none",
+          "focus-visible:ring-[3px] rounded-sm focus-visible:ring-ring/50 focus-visible:border-ring",
+          "disabled:pointer-events-none disabled:opacity-50",
+          className
+        )}
+        {...props}
+      >
+        {children}
+        <span className="pointer-events-none size-5 shrink-0 flex items-center justify-center">
+          <Plus className="group-data-[state=open]:hidden" size={20} />
+          <Minus className="hidden group-data-[state=open]:block" size={20} />
+        </span>
+      </AccordionPrimitive.Trigger>
+    </AccordionPrimitive.Header>
+  );
+}
+
+/* Content — ONLY thing that animates */
+function AccordionContent({ className, children, ...props }) {
+  return (
+    <AccordionPrimitive.Content
+      data-slot="accordion-content"
+      className="
+        overflow-hidden text-sm
+        will-change-[height]
+
+        data-[state=open]:animate-accordion-down
+        data-[state=closed]:animate-accordion-up
+
+        data-[state=open]:duration-1100
+        data-[state=closed]:duration-1100
+
+        data-[state=open]:ease-[cubic-bezier(0.4,0,0.2,1)]
+        data-[state=closed]:ease-[cubic-bezier(0.4,0,0.2,1)]
+      "
+      {...props}
+    >
+      <div className={cn("pt-0 pb-4", className)}>{children}</div>
+    </AccordionPrimitive.Content>
+  );
+}
+
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent };

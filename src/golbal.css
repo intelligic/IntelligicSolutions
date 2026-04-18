@@ -1,0 +1,187 @@
+@reference "tailwindcss";
+
+@layer base {
+  .main {
+    @apply px-5 md:pl-20 lg:pl-20 xl:px-20 2xl:px-25 flex flex-col justify-center items-center w-full gap-8 sm:gap-10 md:gap-12 lg:gap-14;
+  }
+
+  .topmain {
+    @apply w-full flex flex-col justify-center items-center;
+  }
+}
+
+@layer components {
+  .mainHeading {
+    @apply text-[25px] sm:text-[28px] md:text-[32px] lg:text-[35px] font-semibold capitalize tracking-wider leading-8 lg:leading-14 text-[#000000];
+  }
+
+  .subHeading {
+    @apply text-[16px] md:text-[18px] lg:text-[20px] font-bold capitalize  tracking-wider leading-4 lg:leading-6  text-black;
+  }
+
+  .mainParagraph {
+    @apply text-[14px] sm:text-[16px] font-medium capitalize tracking-wide leading-6 text-center text-[#4b4b4b];
+  }
+
+  .subheadingbg {
+    @apply bg-white rounded-3xl py-0.5 px-5 border border-[#00AEEF] hover:bg-[#4fd2ff]  transition-all duration-1200 ease-in-out;
+  }
+
+  .label {
+    @apply text-[14px] font-medium capitalize  tracking-wider leading-4 lg:leading-6 text-black;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 border rounded-md outline-none focus:border-[#0B97B8] focus:border-2 bg-white text-black  placeholder:text-[14px] font-medium capitalize  tracking-wider leading-4 lg:leading-6 transition-all duration-700;
+  }
+
+  .listText {
+    @apply text-[14px] lg:text-[16px] font-bold capitalize  tracking-wider text-black;
+  }
+  .text {
+    @apply text-[14px] lg:text-[16px] text-black font-bold capitalize text-center lg:text-start;
+  }
+
+  .iconHeading {
+    @apply text-[20px] text-[#0B97B8] shrink-0 hover:text-[#e0f6ff] transition-all duration-1200  ease-in-out;
+  }
+
+  .icon {
+    @apply text-[30px] sm:text-[35px] md:text-[40px] lg:text-[45px] text-[#0B97B8] shrink-0 transition-all duration-1200 hover:scale-110 hover:text-blue-500;
+  }
+
+  .footerHeading {
+    @apply text-[16px] lg:text-[20px] text-black tracking-wide font-semibold text-start;
+  }
+
+  .footertext {
+    @apply text-[14px] lg:text-[16px] text-black font-semibold tracking-wide text-start;
+  }
+
+  .footerIcon {
+    @apply text-black text-[16px] lg:text-[20px]  shrink-0 transition-all duration-300 hover:scale-110 hover:text-blue-500;
+  }
+  .button {
+    @apply bg-[#00AEEF] text-black font-bold px-6 py-2.5 rounded-lg tracking-widest whitespace-nowrap  hover:bg-blue-400 transition-all duration-700;
+  }
+
+  /* For Text Animation start  */
+  .animationtext {
+    @apply absolute left-0 top-0 w-full h-full transition-transform duration-1000 ease-in-out group-hover:-translate-y-full;
+  }
+  .animationtexthover {
+    @apply absolute left-0 top-full w-full h-full transition-transform duration-1000 ease-in-out group-hover:-translate-y-full;
+  }
+  /* For Text Animation end  */
+}
+
+@layer utilities {
+  .cart-shadow {
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  .cart {
+    transition: box-shadow 0.7s ease-in-out;
+  }
+
+  .cart:hover {
+    box-shadow:
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+
+  .cart2 {
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  .cart2:hover {
+    box-shadow:
+      rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
+
+  .normal-shadow {
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  .normal-shadow:hover {
+    box-shadow:
+      rgba(255, 255, 255, 0.678) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  }
+
+  .text-shadow-pro {
+    transition: text-shadow 0.7s ease-in-out;
+  }
+  .text-shadow-pro:hover {
+    text-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.25),
+      0 6px 12px rgba(0, 0, 0, 0.25),
+      0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* reusable utility class */
+.animate-slide-up-delay {
+  animation: slideUp 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+@layer utilities {
+  /* ---------- Mobile first fixes ---------- */
+
+  @media (max-width: 639px) {
+    .mainHeading {
+      font-size: 22px;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    .subHeading {
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .mainParagraph {
+      text-align: left; /* justify causes overflow on small screens */
+      line-height: 1.6;
+    }
+
+    .text {
+      text-align: center;
+    }
+  }
+
+  /* ---------- Tablet tweaks ---------- */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .mainHeading {
+      line-height: 1.35;
+    }
+
+    .mainParagraph {
+      line-height: 1.65;
+    }
+  }
+
+  /* ---------- Large screen polish ---------- */
+  /* @media (min-width: 1536px) {
+    .main {
+      max-width: 1440px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  } */
+}

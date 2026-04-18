@@ -1,0 +1,21 @@
+// {
+//   "files": [],
+//   "references": [],
+//   "compilerOptions": {
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["./src/*"]
+//     }
+//   }
+// }
+
+{
+  "compilerOptions": {
+    "baseUrl": "./IntelligicSolutions",
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"]
+}
