@@ -14,7 +14,6 @@ const HomeAbout = () => {
             alt="OurSkill Section Image"
           />
         </div>
-{/* https://github.com/intelligic/Project-Assets/main/Intelligic/Images/HomeAbout.webp */}
         {/* Right Side Bar */}
         <div className=" w-full lg:w-1/2 flex flex-col justify-start items-center lg:items-start gap-8 px-4 sm:px-6">
           {/* Heading */}
@@ -41,8 +40,6 @@ const HomeAbout = () => {
                 help businesses thrive in an ever-evolving digital world.
               </p>
             </div>
-
-
           </div>
         </div>
       </div>
