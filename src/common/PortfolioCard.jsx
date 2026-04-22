@@ -40,8 +40,8 @@ const PortfolioCard = ({ image, title }) => {
       </div>
 
       {/* Title */}
-      <div className="  absolute bottom-8 lg:bottom-10 left-0 w-contain-fit p-2 flex justify-center items-center bg-[#8be0ff] rounded-tr-xl backdrop-blur border-t  translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-        <h3 className="subHeading">{title}</h3>
+      <div className=" cart-shadow absolute bottom-8 lg:bottom-10 left-0 w-full p-2 flex justify-center items-center  backdrop-blur  translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+        <h3 className="subHeading">{title}</h3> 
       </div>
     </div>
   );

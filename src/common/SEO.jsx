@@ -6,7 +6,7 @@ const SEO = ({ title, description, keywords, image, url }) => {
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const defaultDescription = "Intelligic Solutions – Premium Technology & Digital Solutions. We build scalable web and mobile applications.";
   const defaultKeywords = "Intelligic, Web Development, Mobile Apps, SEO, Technology Solutions";
-  const defaultImage = "https://raw.githubusercontent.com/vikrampal038/Project-Assets/main/Intelligic/Images/intelligic.png";
+  const defaultImage = "https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/Images/intelligic.png";
   const siteUrl = "https://intelligic.org";
 
   const jsonLd = {

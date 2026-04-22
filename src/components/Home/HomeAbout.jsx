@@ -5,23 +5,23 @@ import HandleMouseLeave from "@/common/Animations/HandleMouseLeave";
 const HomeAbout = () => {
   return (
     <section className="topmain">
-      <div className="main flex flex-col  lg:flex-row  lg:justify-between items-center w-full">
+      <div className="flex flex-col items-center w-full main lg:flex-row lg:justify-between">
         {/* Left Side Sction */}
-        <div className="w-full lg:w-1/2 flex justify-center items-center ">
+        <div className="flex items-center justify-center w-full lg:w-1/2 ">
           <HandleMouseLeave
             src="https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/Images/HomeAbout.webp"
-            className="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-2xl p-2 normal-shadow"
+            className="w-full max-w-sm p-2 sm:max-w-md lg:max-w-lg rounded-2xl normal-shadow"
             alt="OurSkill Section Image"
           />
         </div>
         {/* Right Side Bar */}
-        <div className=" w-full lg:w-1/2 flex flex-col justify-start items-center lg:items-start gap-8 px-4 sm:px-6">
+        <div className="flex flex-col items-center justify-start w-full gap-8 px-4  lg:w-1/2 lg:items-start sm:px-6">
           {/* Heading */}
-          <div className="w-full flex flex-col justify-start items-center gap-8">
+          <div className="flex flex-col items-center justify-start w-full gap-8">
             {/* heading */}
-            <div className="subheadingbg w-fit flex justify-center items-center  gap-3">
+            <div className="flex items-center justify-center gap-3 subheadingbg w-fit">
               <HiSparkles className="iconHeading" />
-              <h1 className="subHeading text-black">About Us</h1>
+              <h1 className="text-black subHeading">About Us</h1>
             </div>
             {/* details */}
             <div className="flex flex-col gap-4">
@@ -48,25 +48,3 @@ const HomeAbout = () => {
 };
 
 export default HomeAbout;
-
-
-
-            {/* social icons */}
-            {/* <div className=" flex flex-col gap-6">
-              <div className="flex justify-center items-center gap-4">
-                {HomeSocial.map((item, index) => {
-                  const Icon = item.icons;
-                  return (
-                    <a
-                      key={index}
-                      href={item.path}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-4 transition"
-                    >
-                      <Icon className="footerIcon" />
-                    </a>
-                  );
-                })}
-              </div>
-            </div> */}

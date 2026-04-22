@@ -19,7 +19,7 @@ const HomeChoosUs = () => {
             {HomeChooseUs.map((item, index) => (
               <div
                 key={index}
-                className=" flex bg-[#f7f7f7] flex-col justify-center items-center gap-6  rounded-lg border border-slate-500">
+                className=" flex bg-[#f7f7f7] flex-col justify-center items-start gap-6  rounded-lg border border-slate-500">
                 <img
                   src={item.image}
                   alt={item.title}

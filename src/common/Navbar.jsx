@@ -6,7 +6,7 @@ const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Services", path: "/services" },
-  { name: "Blog", path: "/blog" },
+  // { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -14,20 +14,20 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-gradient-brand-500-300-200 h-18 border-b z-40 border">
-      <div className="flex items-center justify-between xl:px-35 px-5 sm:px-10 md:px-15 lg:px-20 h-16">
+    <div className="fixed top-0 left-0 z-40 w-full border border-b bg-gradient-brand-500-300-200 h-18">
+      <div className="flex items-center justify-between h-16 px-5 xl:px-35 sm:px-10 md:px-15 lg:px-20">
 
         {/* Logo */}
         <NavLink to="/" className="inline-flex items-center">
           <img
-            src="https://raw.githubusercontent.com/vikrampal038/Project-Assets/main/Intelligic/Images/intelligic.png"
+            src="https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/Images/intelligic.png"
             alt="Intelligic – Technology & Digital Solutions"
-            className="w-28 sm:w-30 md:w-35 lg:w-42 xl:w-48 h-auto object-contain"
+            className="object-contain h-auto w-28 sm:w-30 md:w-35 lg:w-42 xl:w-48"
           />
         </NavLink>
 
         {/* Desktop Nav (ONLY xl and above) */}
-        <div className="hidden xl:flex gap-8 text-lg tracking-wider font-bold">
+        <div className="hidden gap-8 text-lg font-bold tracking-wider xl:flex">
           {navLinks.map((item) => (
             <NavLink key={item.name} to={item.path}>
               {item.name}
@@ -52,7 +52,7 @@ const Navbar = () => {
         {/* Menu Button (Tablet + Mobile) */}
         <button
           onClick={() => setMenuOpen(true)}
-          className="xl:hidden text-3xl"
+          className="text-3xl xl:hidden"
         >
           <HiMenuAlt3 />
         </button>

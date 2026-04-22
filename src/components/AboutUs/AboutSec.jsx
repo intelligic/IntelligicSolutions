@@ -9,38 +9,38 @@ const AboutSec = () => {
   return (
     // bg-[#F6EEE3]
     <section className="topmain">
-      <div className="main flex flex-col xl:flex-row justify-between items-center  w-full">
+      <div className="flex flex-col items-center justify-between w-full main xl:flex-row">
         {/* Left Side Sction */}
-        <div className=" w-full xl:w-1/2 flex justify-center items-center">
+        <div className="flex items-center justify-center w-full  xl:w-1/2">
           <img
-            className="cart w-140 h-auto rounded-2xl"
-            src="https://raw.githubusercontent.com/vikrampal038/Project-Assets/main/Intelligic/Images/AboutSec2.png"
+            className="h-auto cart w-140 rounded-2xl"
+            src="https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/Images/AboutSec2.png"
             alt="OurSkill Section Image"
           />
         </div>
 
         {/* Right Side Bar */}
-        <div className=" w-full xl:w-1/2 flex flex-col justify-center items-start gap-12">
+        <div className="flex flex-col items-start justify-center w-full gap-12  xl:w-1/2">
           {/* Heading */}
-          <div className="w-full flex flex-col justify-center items-center gap-5 ">
+          <div className="flex flex-col items-center justify-center w-full gap-5 ">
             {/* this Div is for heading  */}
-            <div className="w-full flex flex-col justify-center items-center gap-3">
-              <div className="subheadingbg w-fit flex justify-center items-center gap-3">
+            <div className="flex flex-col items-center justify-center w-full gap-3">
+              <div className="flex items-center justify-center gap-3 subheadingbg w-fit">
                 <HiSparkles className="iconHeading" />
                 <h1 className="subHeading">About Us</h1>
               </div>
-              <h2 className="mainHeading text-center">
+              <h2 className="text-center mainHeading">
                 Building Softwares, Building Trust
               </h2>
             </div>
             {/* this is for paragraph */}
             <div className="flex flex-col gap-4">
-              <p className="mainParagraph text-center">
+              <p className="text-center mainParagraph">
                 Our goal is not just to create cutting-edge software, but to
                 forge a relationship built on a foundation of trust and mutual
                 understanding. We view your goals as our own.
               </p>
-              <p className="mainParagraph text-center">
+              <p className="text-center mainParagraph">
                 On the strength of technology and the foundation of trust, we
                 help take your business to new heights.
               </p>
@@ -48,13 +48,13 @@ const AboutSec = () => {
           </div>
 
           {/* LIst  */}
-          <div className="w-full flex flex-col justify-center items-center gap-8 ">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="flex flex-col items-center justify-center w-full gap-8 ">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               {AboutSecData.map((item, index) => (
                 <div
                   key={index}
                   to={item.path}
-                  className="flex items-center gap-4 transition w-full"
+                  className="flex items-center w-full gap-4 transition"
                 >
                   <BiSolidCheckShield className="icon text-[20px]" />
                   <div className="flex flex-col group relative h-[22px] w-[250px] overflow-hidden">

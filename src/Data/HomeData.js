@@ -26,27 +26,27 @@ export const HomeSocial = [
 
 export const HomeChooseUs = [ 
   {
-    image: "https://raw.githubusercontent.com/vikrampal038/Project-Assets/main/Intelligic/Images/HomeChoose1.png",
+    image: "https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/Images/HomeChoose1.png",
     title: "OUR DIFFERENCE",
     description:
       "Our staff is young, energetic and innovative, and we are never afraid to take risks in an effort to help our clients. For every project, no matter how large or how small, we strive to not only meet your needs, but deliver a showcase in your field which helps you to grow your business.",
   },
 
   {
-    image: "https://raw.githubusercontent.com/vikrampal038/Project-Assets/main/Intelligic/Images/homechoose2.png",
+    image: "https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/Images/homechoose2.png",
     title: "OUR SKILLS",
     description:
       "Our wide range of services that we provide speak volumes about the skills we possess. With a strong focus on reviving the software development and web development market, intends to use its skills and bring a brand new approach to the industry.We have the right mix of experienced resources.",
   },
 
   {
-    image: "https://raw.githubusercontent.com/vikrampal038/Project-Assets/main/Intelligic/Images/homechoose3.png",
+    image: "https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/Images/homechoose3.png",
     title: "OUR ETHICS",
     description:
       "At Intelligic Solutions we believe when creativity, technology & marketing combine through strategic plan, The results are achievable. With the best interest of our clients in mind, our actions are always focused on conversions and business growth",
   },
   {
-    image: "https://raw.githubusercontent.com/vikrampal038/Project-Assets/main/Intelligic/Images/Chooseus.jpg",
+    image: "https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/Images/Chooseus.jpg",
     title: "OUR COMMITMENT",
     description:
       "Our commitment goes beyond delivering services. We focus on understanding your goals, maintaining transparent communication, and ensuring consistent quality at every stage. From planning to execution, we stay accountable, responsive, and dedicated to building long-term partnerships that create real value for your business.",

@@ -46,12 +46,12 @@ export const Social = [
 
 // for Legal Data
 export const Legal = [
-  { label: "Privacy Policy", path: "https://raw.githubusercontent.com/vikrampal038/Project-Assets/main/Intelligic/LigelFiles/Privacy-Policy.pdf" },
+  { label: "Privacy Policy", path: "https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/LigelFiles/Privacy-Policy.pdf" },
   {
     label: "Terms And Conditions",
-    path: "https://raw.githubusercontent.com/vikrampal038/Project-Assets/main/Intelligic/LigelFiles/Terms-and-Conditions.pdf",
+    path: "https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/LigelFiles/Terms-and-Conditions.pdf",
   },
-  { label: "Refund Policy", path: "https://raw.githubusercontent.com/vikrampal038/Project-Assets/main/Intelligic/LigelFiles/Refund-Policy.pdf" },
+  { label: "Refund Policy", path: "https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/LigelFiles/Refund-Policy.pdf" },
 ];
 
 // for Contact Data
