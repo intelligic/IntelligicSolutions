@@ -36,7 +36,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop CTA (ONLY xl and above) */}
-        <div className="hidden xl:block cart-shadow relative group p-2.5 overflow-hidden rounded w-56 text-center border border-[#00AEEF] hover:scale-110 transition-all duration-700">
+        <div className="hidden xl:block cart-shadow relative group py-1.5 overflow-hidden rounded-full w-fit px-6 text-center border border-[#00AEEF] hover:scale-110 transition-all duration-700">
           <span className="absolute inset-0 bg-[#4fd3ff3f] -translate-x-full group-hover:translate-x-0 transition-transform duration-700 z-0" />
           <a
             href="https://wa.me/919029965109?text=Hello,%20I’m%20interested%20in%20your%20services."
@@ -44,7 +44,8 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="relative z-10 subHeading xl:text-[18px]"
           >
-            Start a Conversation
+            let's Talk
+            {/* Start a Conversation */}
           </a>
         </div>
 

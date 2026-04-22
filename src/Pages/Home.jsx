@@ -5,10 +5,16 @@ import HomeChoosUs from "../components/Home/HomeChoosUs.jsx";
 import HomeServices from "../components/Home/HomeServices.jsx";
 import HomePortfolio from "../components/Home/HomePortfolio.jsx";
 import HomeTestimonial from "../components/Home/HomeTestimonial.jsx";
+import SEO from "../common/SEO";
 
 const Home = () => {
   return (
     <div>
+      <SEO 
+        title="Technology & Digital Solutions" 
+        description="Innovating with purpose. We build scalable web and mobile applications tailored to your business needs." 
+        url="/"
+      />
       {/* Hero Section */}
       <section id="hero">
         <HomeHero />

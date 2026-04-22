@@ -20,11 +20,11 @@ const Blogsec = () => {
             subHeading="Discover key trends and expert advice on building scalable web and mobile applications."
           />
 
-          <div className="w-full px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+          <div className="w-full px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
             {blogs.map((blog) => (
               <Link
                 key={blog.id}
-                // to={`/blog/${blog.slug}`}
+                to={`/blog/${blog.slug}`}
                 className="border border-slate-800 rounded-sm bg-[#e0f6ff] overflow-hidden hover:shadow-lg transition"
               >
                 {/* Featured Image */}
@@ -33,10 +33,8 @@ const Blogsec = () => {
                     src={blog._embedded?.["wp:featuredmedia"]?.[0]?.source_url}
                     alt={blog.title.rendered}
                     className="h-56 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
                   />
-
-                  {/* Hover square */}
-                  {/* <div className="absolute inset-0 border-4 inset-ring-amber-500 border-white  opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div> */}
                 </div>
 
                 <div className="p-3 m-1 flex flex-col justify-center items-start gap-2.5">
@@ -67,12 +65,11 @@ const Blogsec = () => {
                   </div>
 
                   {/* Read More Button */}
-                  <Link
-                    to={`/blog/${blog.slug}`}
-                    className="text-sm text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded inline-block"
+                  <div
+                    className="text-sm text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded inline-block cursor-pointer"
                   >
                     Read More
-                  </Link>
+                  </div>
                 </div>
               </Link>
             ))}

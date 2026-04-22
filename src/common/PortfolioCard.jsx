@@ -11,6 +11,7 @@ const PortfolioCard = ({ image, title }) => {
           src={image}
           alt={title}
           className="w-full transition-transform duration-3000 ease-linear lg:group-hover:-translate-y-[65%] group-active:-translate-y-[65%] group-focus-within:-translate-y-[65%]"
+          loading="lazy"
         />
 
         {/* CENTER BOUNCING ICON */}

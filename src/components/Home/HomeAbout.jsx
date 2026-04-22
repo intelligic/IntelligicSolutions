@@ -9,12 +9,12 @@ const HomeAbout = () => {
         {/* Left Side Sction */}
         <div className="w-full lg:w-1/2 flex justify-center items-center ">
           <HandleMouseLeave
-            src="https://raw.githubusercontent.com/vikrampal038/Project-Assets/main/Intelligic/Images/HomeAbout.webp"
+            src="https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/Images/HomeAbout.webp"
             className="w-full max-w-sm sm:max-w-md lg:max-w-lg rounded-2xl p-2 normal-shadow"
             alt="OurSkill Section Image"
           />
         </div>
-
+{/* https://github.com/intelligic/Project-Assets/main/Intelligic/Images/HomeAbout.webp */}
         {/* Right Side Bar */}
         <div className=" w-full lg:w-1/2 flex flex-col justify-start items-center lg:items-start gap-8 px-4 sm:px-6">
           {/* Heading */}

@@ -64,6 +64,7 @@ const HandleMouseLeave = ({ src, alt }) => {
         src={src}
         alt={alt}
         className="w-full h-full object-cover pointer-events-none"
+        loading="lazy"
       />
     </div>
   );
