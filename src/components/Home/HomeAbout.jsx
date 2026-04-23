@@ -21,7 +21,7 @@ const HomeAbout = () => {
             {/* heading */}
             <div className="flex items-center justify-center gap-3 subheadingbg w-fit">
               <HiSparkles className="iconHeading" />
-              <h1 className="text-black subHeading">About Us</h1>
+              <h2 className="text-black subHeading">About Us</h2>
             </div>
             {/* details */}
             <div className="flex flex-col gap-4">

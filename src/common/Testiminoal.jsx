@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from "react";
-import { FaUsers } from "react-icons/fa";
+import { FaUsers, FaQuoteRight } from "react-icons/fa";
 import { testimonial } from "../Data/HomeData";
 import Autoplay from "embla-carousel-autoplay";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Carousel,
   CarouselContent,
@@ -16,7 +17,7 @@ const Testiminoal = () => {
 
   const autoplay = useRef(
     Autoplay({
-      delay: 4000,
+      delay: 5000,
       stopOnInteraction: false,
       stopOnMouseEnter: true,
     })
@@ -36,43 +37,95 @@ const Testiminoal = () => {
   }, [api]);
 
   return (
-    <section className="w-full">
-      <div className="md:w-2xl lg:w-4xl xl:w-6xl mx-auto px-4 relative">
+    <section className="w-full py-10 relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 -z-10" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-50/20 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 -z-10" />
+
+      <div className="max-w-7xl mx-auto px-4 relative">
         <Carousel
           setApi={setApi}
           opts={{ align: "center", loop: true }}
           plugins={[autoplay.current]}
-          className="embla"
+          className="w-full"
         >
-          <CarouselContent className="items-center">
+          <CarouselContent className="-ml-4">
             {testimonial.map((item, index) => (
               <CarouselItem
                 key={index}
-                className={`md:basis-1/3 basis-full flex justify-center ${
-                  selectedIndex === index ? "is-selected" : ""
-                }`}
+                className="pl-4 md:basis-1/2 lg:basis-1/3 flex justify-center py-8"
               >
-                <div className="cart-shadow  w-[330px] h-[280px] md:h-[320px]  lg:h-[310px] bg-[#f7f7f7] text-center rounded-xl p-6 shadow-lg transition-all duration-500 flex flex-col gap-4">
-                  <div className="flex justify-center">
-                    <FaUsers className="text-black text-6xl" />
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`relative group h-full w-full max-w-[400px] transition-all duration-500 ${
+                    selectedIndex === index 
+                    ? "scale-105 z-10" 
+                    : "scale-95 opacity-60 grayscale-[0.5]"
+                  }`}
+                >
+                  {/* Card Main Container */}
+                  <div className="bg-white rounded-3xl p-8 shadow-[0_20px_50px_rgba(0,174,239,0.1)] border border-blue-50/50 flex flex-col h-full relative overflow-hidden group-hover:shadow-[0_20px_60px_rgba(0,174,239,0.15)] transition-shadow">
+                    
+                    {/* Quote Icon Background */}
+                    <FaQuoteRight className="absolute top-6 right-8 text-blue-50 text-6xl opacity-40 group-hover:text-blue-100 group-hover:scale-110 transition-all duration-500" />
+
+                    {/* Content Section */}
+                    <div className="relative z-10 flex flex-col h-full">
+                      {/* Description/Quote */}
+                      <div className="grow mb-8">
+                        <p className="text-gray-600 italic leading-relaxed text-[15px] lg:text-[16px]">
+                          "{item.description}"
+                        </p>
+                      </div>
+
+                      {/* Footer: Avatar & Info */}
+                      <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
+                        <div className="w-14 h-14 rounded-full bg-linear-to-tr from-[#00AEEF] to-[#4fd2ff] flex items-center justify-center text-white shadow-lg shadow-blue-200">
+                          <FaUsers className="text-2xl" />
+                        </div>
+                        <div className="flex flex-col">
+                          <h3 className="font-bold text-gray-900 text-lg leading-tight">
+                            {item.name}
+                          </h3>
+                          <p className="text-[#00AEEF] font-medium text-sm tracking-wide">
+                            {item.title}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Subtle bottom accent line */}
+                    <div className="absolute bottom-0 left-0 w-0 h-1 bg-[#00AEEF] group-hover:w-full transition-all duration-700" />
                   </div>
-
-                  <div className=" flex flex-col justify-center items-center gap-2">
-                    <h3 className="subHeading">{item.name}</h3>
-
-                    <p className="label">{item.title}</p>
-
-                    <p className="text-[12px] lg:text-[14px] text-black font-normal  tracking-wide text-center leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
+                </motion.div>
               </CarouselItem>
             ))}
           </CarouselContent>
 
-          <CarouselPrevious className="-left-3 sm:-left-6 md:-left-10 lg:-left-14 opacity-0 pointer-events-none xl:opacity-100 xl:pointer-events-auto" />
-          <CarouselNext className="-right-3 sm:-right-6 md:-right-10 lg:-right-14 opacity-0 pointer-events-none xl:opacity-100 xl:pointer-events-auto" />
+          {/* Controls */}
+          <div className="hidden xl:block">
+            <CarouselPrevious className="left-[-50px] bg-white border-blue-100 text-[#00AEEF] hover:bg-[#00AEEF] hover:text-white transition-all shadow-md" />
+            <CarouselNext className="right-[-50px] bg-white border-blue-100 text-[#00AEEF] hover:bg-[#00AEEF] hover:text-white transition-all shadow-md" />
+          </div>
+
+          {/* Pagination Dots */}
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonial.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => api?.scrollTo(i)}
+                className={`h-2.5 rounded-full transition-all duration-300 ${
+                  selectedIndex === i 
+                  ? "w-8 bg-[#00AEEF]" 
+                  : "w-2.5 bg-blue-100 hover:bg-blue-200"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
         </Carousel>
       </div>
     </section>
@@ -80,3 +133,4 @@ const Testiminoal = () => {
 };
 
 export default Testiminoal;
+

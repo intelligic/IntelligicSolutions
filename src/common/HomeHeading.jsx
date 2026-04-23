@@ -8,9 +8,9 @@ const HomeHeading = ({ mainHeading, subHeading }) => {
       {/* Small Heading / Badge */}
       <div className="w-fit subheadingbg flex justify-center items-center gap-3">
         <HiSparkles className="iconHeading" />
-        <h1 className="subHeading">
+        <span className="subHeading">
           {mainHeading}
-        </h1>
+        </span>
       </div>
 
       {/* Main Heading */}

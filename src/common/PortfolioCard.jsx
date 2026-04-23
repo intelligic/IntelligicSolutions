@@ -10,7 +10,7 @@ const PortfolioCard = ({ image, title }) => {
         <img
           src={image}
           alt={title}
-          className="w-full transition-transform duration-[4000ms] ease-in-out lg:group-hover:-translate-y-[65%] group-active:-translate-y-[65%]"
+          className="w-full transition-transform duration-4000 ease-in-out lg:group-hover:-translate-y-[65%] group-active:-translate-y-[65%]"
           loading="lazy"
         />
 

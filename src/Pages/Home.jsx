@@ -11,8 +11,9 @@ const Home = () => {
   return (
     <div>
       <SEO 
-        title="Technology & Digital Solutions" 
-        description="Innovating with purpose. We build scalable web and mobile applications tailored to your business needs." 
+        title="Best Web & Mobile App Development Company" 
+        description="Intelligic Solutions is a leading technology partner providing full-stack web development, custom software, and mobile app solutions. We transform your ideas into powerful digital products." 
+        keywords="Web Development Company, Mobile App Development, Custom Software Solutions, UI/UX Design, IT Services in India, Scalable Web Apps"
         url="/"
       />
       {/* Hero Section */}

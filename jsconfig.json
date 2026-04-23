@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./IntelligicSolutions",
-    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     }

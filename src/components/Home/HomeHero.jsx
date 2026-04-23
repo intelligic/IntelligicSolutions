@@ -8,8 +8,13 @@ const HomeHero = () => {
     <section className="relative overflow-hidden pt-35 pb-15 bg-gradient-brand-200-100-50">
       {/* Background */}
       <div className="absolute inset-0">
-        <div className="w-full h-[600px] relative">
-          <Threads amplitude={1.5} distance={0.5} enableMouseInteraction />
+        <div className="w-full h-full relative">
+          <Threads 
+            amplitude={2} 
+            distance={0.4} 
+            enableMouseInteraction 
+            color={[0.2, 0.2, 0.2]} 
+          />
         </div>
       </div>
 

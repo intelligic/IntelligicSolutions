@@ -23,9 +23,9 @@ uniform vec2 uMouse;
 
 #define PI 3.1415926538
 
-const int u_line_count = 40;
-const float u_line_width = 7.0;
-const float u_line_blur = 10.0;
+const int u_line_count = 30;
+const float u_line_width = 6.0;
+const float u_line_blur = 8.0;
 
 float Perlin2D(vec2 P) {
     vec2 Pi = floor(P);
@@ -127,10 +127,20 @@ const Threads = ({ color = [1, 1, 1], amplitude = 1, distance = 0, enableMouseIn
   const glRef = useRef(null);
   const targetMouseRef = useRef([0.5, 0.5]);
   const currentMouseRef = useRef([0.5, 0.5]);
+  const isVisible = useRef(true);
 
   useEffect(() => {
     if (!containerRef.current) return;
     const container = containerRef.current;
+
+    // Intersection Observer to stop animation when not in view
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible.current = entry.isIntersecting;
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(container);
 
     const isWebGLSupported = () => {
       try {
@@ -148,7 +158,7 @@ const Threads = ({ color = [1, 1, 1], amplitude = 1, distance = 0, enableMouseIn
 
     let renderer;
     try {
-      renderer = new Renderer({ alpha: true });
+      renderer = new Renderer({ alpha: true, antialias: false, powerPreference: 'high-performance' });
     } catch (e) {
       console.error('Threads: Failed to create renderer', e);
       return;
@@ -197,6 +207,11 @@ const Threads = ({ color = [1, 1, 1], amplitude = 1, distance = 0, enableMouseIn
     resize();
 
     function update(t) {
+      if (!isVisible.current) {
+        animationFrameId.current = requestAnimationFrame(update);
+        return;
+      }
+
       if (enableMouseInteraction) {
         const smoothing = 0.05;
         currentMouseRef.current[0] += smoothing * (targetMouseRef.current[0] - currentMouseRef.current[0]);
@@ -219,6 +234,7 @@ const Threads = ({ color = [1, 1, 1], amplitude = 1, distance = 0, enableMouseIn
     animationFrameId.current = requestAnimationFrame(update);
 
     return () => {
+      observer.disconnect();
       if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
       window.removeEventListener('resize', resize);
 

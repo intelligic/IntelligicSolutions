@@ -11,14 +11,22 @@ const SEO = ({ title, description, keywords, image, url }) => {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebSite",
+    "@type": "Organization",
     "name": siteTitle,
     "url": siteUrl,
+    "logo": defaultImage,
     "description": description || defaultDescription,
-    "publisher": {
-      "@type": "Organization",
-      "name": "Intelligic Solutions",
-      "logo": defaultImage
+    "sameAs": [
+      "https://www.linkedin.com/company/intelligic-solutions",
+      "https://www.instagram.com/intelligicsolutions",
+      "https://www.facebook.com/intelligicsolutions"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-XXXXXXXXXX",
+      "contactType": "customer service",
+      "areaServed": "IN",
+      "availableLanguage": ["en", "Hindi"]
     }
   };
 
@@ -28,6 +36,7 @@ const SEO = ({ title, description, keywords, image, url }) => {
       <title>{fullTitle}</title>
       <meta name="description" content={description || defaultDescription} />
       <meta name="keywords" content={keywords || defaultKeywords} />
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
@@ -35,6 +44,7 @@ const SEO = ({ title, description, keywords, image, url }) => {
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description || defaultDescription} />
       <meta property="og:image" content={image || defaultImage} />
+      <meta property="og:site_name" content={siteTitle} />
 
       {/* Twitter */}
       <meta property="twitter:card" content="summary_large_image" />
