@@ -3,7 +3,9 @@ import { useRef, useEffect, useCallback, useMemo } from 'react';
 import  gsap  from 'gsap';
 import { InertiaPlugin } from 'gsap/InertiaPlugin';
 
-gsap.registerPlugin(InertiaPlugin);
+if (InertiaPlugin) {
+  gsap.registerPlugin(InertiaPlugin);
+}
 
 const throttle = (func, limit) => {
   let lastCall = 0;

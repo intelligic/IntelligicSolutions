@@ -127,8 +127,9 @@ const Footer = () => {
                 { to: "/", label: "Home" },
                 { to: "/about", label: "About" },
                 { to: "/services", label: "Services" },
-                { to: "/blog", label: "Blog" },
+                // { to: "/blog", label: "Blog" },
                 { to: "/contact", label: "Contact" },
+                { to: "/dutyflex", label: "Dutyflex" },
               ].map((item, index) => (
                 <NavLink
                   key={index}

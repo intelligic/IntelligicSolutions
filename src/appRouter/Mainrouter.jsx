@@ -7,6 +7,7 @@ const About = lazy(() => import("@/Pages/About"));
 const Services = lazy(() => import("@/Pages/Services"));
 const Blog = lazy(() => import("@/Pages/Blog"));
 const Contact = lazy(() => import("@/Pages/Contact"));
+const Dutyflex = lazy(() => import("@/Pages/Dutyflex"));
 const ServiceEnquiry = lazy(() => import("@/Pages/ServiceEnquiry"));
 const Game = lazy(() => import("@/Pages/Game"));
 
@@ -26,6 +27,7 @@ const MainRouter = () => {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<BlogDetail />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/dutyflex" element={<Dutyflex />} />
         <Route path='/service_enquiry' element={<ServiceEnquiry />} />
         <Route path='/game' element={<Game />} />
       </Routes>
