@@ -70,7 +70,7 @@ export const HomeServicesData = [
 
   {
     icons: FaAppStore,
-    title: "Mobile Apps (Android & iOS)",
+    title: "Mobile Apps",
     description:
       "Mobile UIs, or front-ends, rely on mobile back-ends to support access to enterprise systems. The mobile back-end facilitates data routing, security, authentication, authorization, working off-line, and service orchestration.",
   },

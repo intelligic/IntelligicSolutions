@@ -25,13 +25,20 @@ const HomePortfolio = () => {
             mainHeading="Our Portfolio"
             subHeading="These are our portfolio and still adding"
           />
-
           {/* Portfolio Cards */}
-          <div className="grid items-center justify-center w-full grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-            <PortfolioCard title="AM Engineers" image={site1} />
-            <PortfolioCard title="Orienteering Federation Of India"image={site3}/>
-            <PortfolioCard title="Riseon Elevators" image={site4} />
-            <PortfolioCard title="Technokraft Solution" image={site6} />
+          <div className="flex flex-wrap items-center justify-center w-full gap-6 lg:gap-8">
+            <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(30%-20px)] max-w-[350px]">
+              <PortfolioCard title="AM Engineers" image={site1} />
+            </div>
+            <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(30%-20px)] max-w-[350px]">
+              <PortfolioCard title="Orienteering Federation Of India" image={site3} />
+            </div>
+            <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(30%-20px)] max-w-[350px]">
+              <PortfolioCard title="Riseon Elevators" image={site4} />
+            </div>
+            <div className="w-full md:w-[calc(50%-16px)] lg:w-[calc(30%-20px)] max-w-[350px]">
+              <PortfolioCard title="Technokraft Solution" image={site6} />
+            </div>
           </div>
         </div>
       </div>
