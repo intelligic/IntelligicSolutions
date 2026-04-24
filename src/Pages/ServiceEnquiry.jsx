@@ -10,9 +10,7 @@ const ServiceEnquiry = () => {
         description="Ready to start your project with Intelligic? Fill out this inquiry form and our experts will get back to you with a tailored plan." 
         url="/service_enquiry"
       />
-      <section id="hero" className="bg-gradient-brand-50-100-200 py-12">
-          <Enquirysec />
-        </section>
+      <Enquirysec />
     </div>
   );
 };

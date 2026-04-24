@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { PiArrowLeftBold, PiArrowClockwiseBold } from "react-icons/pi";
+import { motion } from "framer-motion";
 
 const TOTAL_TIME = 20;
 const COUPON_CODE = "INTSERVSOL";
 
-// ✅ Responsive bubble count
 const getBubbleCount = () => {
   const width = window.innerWidth;
   if (width < 640) return 30; // mobile
@@ -14,17 +14,15 @@ const getBubbleCount = () => {
   return 60; // desktop
 };
 
-const GameFile = () => {
-  const navigate = useNavigate();
-
+const GameFile = ({ onExit, isPopup = false }) => {
   const [timer, setTimer] = useState(TOTAL_TIME);
   const [score, setScore] = useState(0);
   const [hitNumber, setHitNumber] = useState(0);
   const [bubbles, setBubbles] = useState([]);
   const [gameOver, setGameOver] = useState(false);
   const [bubbleCount, setBubbleCount] = useState(getBubbleCount());
+  const [wrongIndex, setWrongIndex] = useState(null);
 
-  // ✅ Generate bubbles
   const makeBubble = () => {
     const newBubbles = Array.from({ length: bubbleCount }, () =>
       Math.floor(Math.random() * 10),
@@ -32,23 +30,32 @@ const GameFile = () => {
     setBubbles(newBubbles);
   };
 
-  // ✅ New hit number
   const getNewHit = () => {
     setHitNumber(Math.floor(Math.random() * 10));
   };
 
-  // ✅ Bubble click handler
-  const handleBubbleClick = (num) => {
+  const handleBubbleClick = (num, index) => {
     if (num === hitNumber) {
       setScore((prev) => prev + 10);
       getNewHit();
       makeBubble();
+      setWrongIndex(null);
     } else {
+      setWrongIndex(index);
       setScore((prev) => Math.max(0, prev - 10));
+      setTimeout(() => setWrongIndex(null), 400);
     }
   };
 
-  // ✅ Timer logic
+  const resetGame = () => {
+    setTimer(TOTAL_TIME);
+    setScore(0);
+    setGameOver(false);
+    setWrongIndex(null);
+    getNewHit();
+    makeBubble();
+  };
+
   useEffect(() => {
     if (gameOver) return;
 
@@ -66,13 +73,11 @@ const GameFile = () => {
     return () => clearInterval(interval);
   }, [gameOver]);
 
-  // ✅ Init game
   useEffect(() => {
     getNewHit();
     makeBubble();
   }, [bubbleCount]);
 
-  // ✅ Responsive resize handling
   useEffect(() => {
     const handleResize = () => {
       setBubbleCount(getBubbleCount());
@@ -83,84 +88,98 @@ const GameFile = () => {
   }, []);
 
   return (
-    <section className="min-h-screen px-4 flex justify-center items-center md:pl-18">
-      <div className="w-full max-w-6xl h-[80vh] border border-black rounded-xl overflow-hidden">
-        {/* Top Bar */}
-        <div className="bg-[#00AEEF] h-[50px] md:h-[60px] lg:h-[80px] flex justify-around items-center text-white px-3 sm:px-[11%]">
-          <div className="flex gap-3 items-center justify-center">
-            <h2 className="text text-lg md:text-xl lg:text-2xl">Hit</h2>
-            <div className="text text-lg md:text-xl lg:text-2xl bg-white  w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12  rounded-full flex items-center justify-center">
+    <div className={`w-full flex flex-col bg-white overflow-hidden ${isPopup ? "h-auto max-h-[90vh]" : "min-h-screen pt-20"}`}>
+      {/* Header Bar */}
+      <div className="bg-[#00AEEF] p-4 sm:p-6 lg:p-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-white">
+        {onExit && (
+          <button 
+            onClick={onExit}
+            className="absolute top-4 left-4 p-2 hover:bg-white/20 transition-colors"
+          >
+            <PiArrowLeftBold className="text-2xl" />
+          </button>
+        )}
+        
+        <div className="flex gap-8 items-center justify-center w-full">
+          <div className="flex flex-col items-center">
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Hit</span>
+            <div className="text-xl md:text-2xl font-black bg-white text-[#00AEEF] w-10 h-10 md:w-14 md:h-14 rounded-2xl flex items-center justify-center shadow-lg">
               {hitNumber}
             </div>
           </div>
 
-          <div className="flex gap-3 items-center justify-center">
-            <h2 className="text text-lg md:text-xl lg:text-2xl">Timer</h2>
-            <div className="text text-lg md:text-xl lg:text-2xl bg-white  w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12  rounded-full flex items-center justify-center">
+          <div className="flex flex-col items-center">
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Timer</span>
+            <div className="text-xl md:text-2xl font-black bg-white text-[#00AEEF] w-10 h-10 md:w-14 md:h-14 rounded-2xl flex items-center justify-center shadow-lg">
               {timer}
             </div>
           </div>
 
-          <div className="flex gap-3 items-center justify-center">
-            <h2 className="text text-lg md:text-xl lg:text-2xl">Score</h2>
-            <div className="text text-lg md:text-xl lg:text-2xl bg-white  w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12  rounded-full flex items-center justify-center">
+          <div className="flex flex-col items-center">
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Score</span>
+            <div className="text-xl md:text-2xl font-black bg-white text-[#00AEEF] w-10 h-10 md:w-14 md:h-14 rounded-2xl flex items-center justify-center shadow-lg">
               {score}
             </div>
           </div>
         </div>
-
-        {/* Bottom Area */}
-        <div className="w-full h-[calc(100%-100px)]  border p-2 md:p-3 lg:p-4 flex flex-wrap gap-4 items-center justify-center overflow-hidden">
-          {!gameOver &&
-            bubbles.map((num, index) => (
-              <div
-                key={index}
-                className="flex items-center justify-center cursor-pointer font-bold text-black rounded-full bg-[#0591bc] hover:bg-[#4fd2ff] w-12 h-12 text-lg sm:w-14 sm:h-14 sm:text-xl md:w-16 md:h-16 lg:w-[4.5rem] lg:h-[4.5rem] shadow-[rgba(50,50,93,0.25)_0px_50px_100px_-20px, rgba(0,0,0,0.3)_0px_30px_60px_-30px, rgba(10,37,64,0.35)_0px_-2px_6px_0px_inset]"
-                onClick={() => handleBubbleClick(num, index)}
-              >
-                {num}
-              </div>
-            ))}
-
-          {gameOver && (
-            <div className="flex  flex-col justify-center items-center gap-4">
-              <h1 className="mainHeading">Well Played 🎉</h1>
-              <h2 className="subHeading flex justify-center items-center gap-3">
-                Your Score:{" "}
-                <span className="mainHeading text-[#0591bc]">{score}</span>
-              </h2>
-
-              <p className="text">
-                Based on your performance, you’ve unlocked an instant discount
-                on our services.
-              </p>
-
-              <h3 className="subHeading flex justify-center items-center gap-3">
-                Coupon Code:{" "}
-                <span className="text-[#0591bc] border px-2 py-1 border-blue-500 rounded-sm">
-                  {COUPON_CODE}
-                </span>
-              </h3>
-              <p className="text">
-                Please take a screenshot of this screen and share it during the
-                discussion to claim your discount.
-              </p>
-              <NavLink
-                to="/about"
-                className="relative group overflow-hidden button inline-flex bg-green-600 text-white items-center justify-center px-3 py-2  lg:px-5 lg:py-2"
-              >
-                {/* Hover background */}
-                <span className="absolute inset-0 bg-[#8be0ff5b] border rounded-lg -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out z-0"></span>
-
-                {/* Button text */}
-                <span className="relative z-10">Start the Game</span>
-              </NavLink>
-            </div>
-          )}
-        </div>
       </div>
-    </section>
+
+      {/* Play Area */}
+      <div className="flex-1 p-6 md:p-10 flex flex-wrap gap-3 sm:gap-4 items-center justify-center min-h-[300px] max-h-[60vh] overflow-y-auto custom-scrollbar bg-gray-50/50">
+        {!gameOver ? (
+          bubbles.map((num, index) => (
+            <motion.button
+              key={index}
+              whileTap={{ scale: 0.9 }}
+              animate={wrongIndex === index ? { x: [-5, 5, -5, 5, 0], backgroundColor: "#ef4444", borderColor: "#dc2626" } : {}}
+              className={`flex items-center justify-center cursor-pointer font-black rounded-full bg-white border-2 border-gray-100 w-12 h-12 text-lg sm:w-14 sm:h-14 sm:text-xl md:w-16 md:h-16 shadow-lg transition-all duration-300 ${wrongIndex === index ? 'text-white' : 'text-black hover:border-[#00AEEF] hover:text-[#00AEEF] hover:scale-110'}`}
+              onClick={() => handleBubbleClick(num, index)}
+            >
+              {num}
+            </motion.button>
+          ))
+        ) : (
+          <div className="flex flex-col justify-center items-center text-center gap-6 py-10 max-w-md mx-auto w-full">
+            <div className="w-20 h-20 bg-green-100 text-green-600 rounded-3xl flex items-center justify-center mb-2 animate-bounce">
+               <span className="text-4xl">🎉</span>
+            </div>
+            
+            <div>
+              <h1 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">Well Played!</h1>
+              <p className="text-gray-500 mt-2 font-medium">Your final score is <span className="text-[#00AEEF] font-black text-2xl">{score}</span></p>
+            </div>
+
+            <div className="w-full bg-blue-50 p-6 rounded-3xl border border-blue-100 space-y-4 ">
+               <p className="text-xs font-black text-blue-400 uppercase tracking-widest">Your Reward Unlocked</p>
+               <div className="flex flex-col items-center gap-2">
+                  <span className="text-3xl font-black text-[#00AEEF]">{COUPON_CODE}</span>
+                  <p className="text-[10px] text-blue-400 font-bold max-w-[200px]">Screenshot this and share with our team to claim your discount.</p>
+               </div>
+            </div>
+
+            <div className="flex gap-4 w-full">
+              <button
+                onClick={resetGame}
+                className="flex-1 inline-flex items-center justify-center gap-2 bg-gray-900 text-white font-bold py-4 rounded-2xl hover:bg-gray-800 transition-all active:scale-95 group"
+              >
+                <PiArrowClockwiseBold className="text-xl group-hover:rotate-180 transition-transform duration-500" />
+                Try Again
+              </button>
+              {onExit && (
+                <button
+                  onClick={onExit}
+                  className="flex-1 bg-[#00AEEF] text-white font-bold py-4 rounded-2xl hover:bg-[#0096ce] transition-all active:scale-95"
+                >
+                  Done
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
   );
 };
 
 export default GameFile;
+

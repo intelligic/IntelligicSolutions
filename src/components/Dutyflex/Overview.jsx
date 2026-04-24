@@ -57,8 +57,7 @@ const Overview = () => {
       >
         <div className="relative group w-full rounded-[2.5rem] overflow-hidden shadow-[0_35px_60px_-15px_rgba(0,0,0,0.2)] bg-white">
           <img
-            src="/src/Assets/unnamed.png"
-            // src="https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/Images/dutyflexhero.png"
+            src="https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/Images/dutyflexhero.png"
             alt="DutyFlex Dashboard on iPad"
             className="w-full h-[380px] object-cover transition-transform duration-1000 group-hover:scale-105"
           />
