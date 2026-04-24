@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
-import { BsChatRightTextFill } from "react-icons/bs";
+import { SiWhatsapp } from "react-icons/si";
+
+
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
@@ -57,7 +59,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="relative z-10 subHeading xl:text-[18px] hidden xl:block"
           >
-            <BsChatRightTextFill className="text-3xl text-blue-400" />
+            <SiWhatsapp className="text-3xl text-green-500 hover:text-green-700 transition-all duration-700 hover:scale-110" />
           </a>
         </div>
 

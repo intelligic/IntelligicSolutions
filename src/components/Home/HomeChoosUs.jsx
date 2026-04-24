@@ -9,11 +9,10 @@ const ChooseUsCard = ({ item, isExpanded, onToggle }) => {
         <img
           src={item.image}
           alt={item.title}
-          className="object-cover w-full h-full transition-transform duration-2000 ease-in-out group-hover:scale-110"
+          className="object-cover w-full h-full transition-transform ease-in-out duration-2000 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-in-out"></div>
+        <div className="absolute inset-0 transition-opacity duration-1000 ease-in-out opacity-0 bg-linear-to-t from-black/40 to-transparent group-hover:opacity-100"></div>
       </div>
-
       <div className="flex flex-col items-center justify-start gap-3 px-6 py-5 min-h-[160px] text-center w-full">
         <h3 className="subHeading group-hover:text-[#00AEEF] transition-colors duration-1000 ease-in-out">
           {item.title}
