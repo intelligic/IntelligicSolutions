@@ -22,7 +22,7 @@ const Choosedutyflex = () => {
       >
         {/* Left Content */}
         <div className="w-full lg:w-3/5 p-8 md:p-16 flex flex-col gap-8">
-          <h2 className="text-3xl md:text-5xl font-extrabold text-white leading-tight">
+          <h2 className="text-2xl md:text-4xl font-extrabold text-white leading-tight">
             Why Choose DutyFlex?
           </h2>
           
@@ -36,10 +36,10 @@ const Choosedutyflex = () => {
                 transition={{ delay: index * 0.1 }}
                 className="flex items-center gap-4 text-slate-300"
               >
-                <div className="bg-[#00AEEF] rounded-full p-0.5 flex-shrink-0">
-                  <HiCheckCircle className="text-white text-xl" />
+                <div className="bg-[#00AEEF] rounded-full p-0.5 shrink-0">
+                  <HiCheckCircle className="text-white text-lg" />
                 </div>
-                <span className="text-lg md:text-xl font-medium">{feature}</span>
+                <span className="text-md md:text-lg font-medium">{feature}</span>
               </motion.li>
             ))}
           </ul>

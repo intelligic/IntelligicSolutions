@@ -232,29 +232,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* For Third Section */}
-        <div className="grid items-center justify-between w-full grid-cols-1 gap-6 py-4 border-b px-5 sm:px-10 md:px-15 lg:px-20 xl:px-35 xl:grid-cols-2 bg-gradient-brand-400-300-400 border-[#8a8a8a8e]">
-          {/* for copy write */}
-          <div className="tracking-wider flex items-center justify-start gap-5 text-center transition-all footertext xl:text-start duration-1200 hover:text-gray-600">
-            <span className="text-center lg:text-start">
-              Checkout our other products
-            </span>
-            <a
-              href="https://dutyflex.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center"
-            >
-              <img
-                src="https://raw.githubusercontent.com/intelligic/Project-Assets//main/Dutyflex/logo.png"
-                alt="Intelligic – Technology & Digital Solutions"
-                className="object-contain h-auto w-28"
-              />
-            </a>
-        </div>
-      </div>
-
-      {/* For fourth Section */}
+      {/* For third Section */}
       <div className="grid items-center justify-between w-full grid-cols-1 gap-6 py-4 px-5 sm:px-10 md:px-15 lg:px-20 xl:px-35 xl:grid-cols-2 bg-gradient-brand-400-300-400">
         {/* for copy write */}
         <div className="tracking-wider text-center transition-all footertext xl:text-start duration-1200 hover:text-gray-600">

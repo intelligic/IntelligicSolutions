@@ -7,7 +7,7 @@ const HomeTestimonial = () => {
   return (
     <section className="topmain">
       <div className="main w-full">
-        <div className=" w-full flex flex-col justify-center items-center gap-14">
+        <div className=" w-full flex flex-col justify-center items-center">
           {/* Heading Section */}
           <HomeHeading
             mainHeading="Testimonial"
@@ -22,5 +22,3 @@ const HomeTestimonial = () => {
 }
 
 export default HomeTestimonial
-
-

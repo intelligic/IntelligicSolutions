@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
-
+import { BsChatRightTextFill } from "react-icons/bs";
 const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
@@ -35,24 +35,12 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="flex justify-center items-center gap-5">
-          <div className="hidden xl:block cart-shadow relative group py-1.5 overflow-hidden rounded-full w-fit px-6 text-center border border-[#00AEEF] hover:scale-110 transition-all duration-700">
-            <span className="absolute inset-0 bg-[#4fd3ff3f] -translate-x-full group-hover:translate-x-0 transition-transform duration-700 z-0" />
-            <a
-              href="https://wa.me/919029965109?text=Hello,%20I’m%20interested%20in%20your%20services."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative z-10 subHeading xl:text-[18px]"
-            >
-              let's Talk
-              {/* Start a Conversation */}
-            </a>
-          </div>
+        <div className="flex justify-center items-center gap-8">
           {/* Unique & Attractive Dutyflex Button */}
           <div className="hidden xl:block relative group">
             {/* Pulsing Glow Background */}
             <span className="absolute inset-0 bg-cyan-400 rounded-full blur-md opacity-20 group-hover:opacity-50 animate-pulse transition-opacity" />
-            
+
             <NavLink
               to="/dutyflex"
               className="relative z-10 flex items-center gap-2 bg-slate-900 text-white px-6 py-2 rounded-full font-bold hover:bg-slate-800 transition-all border border-slate-700 hover:border-cyan-400/50 shadow-lg"
@@ -63,6 +51,14 @@ const Navbar = () => {
               </span>
             </NavLink>
           </div>
+          <a
+            href="https://wa.me/919029965109?text=Hello,%20I’m%20interested%20in%20your%20services."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative z-10 subHeading xl:text-[18px] hidden xl:block"
+          >
+            <BsChatRightTextFill className="text-3xl text-blue-400" />
+          </a>
         </div>
 
         {/* Desktop CTA (ONLY xl and above) */}
@@ -98,14 +94,6 @@ const Navbar = () => {
               {item.name}
             </NavLink>
           ))}
-          <NavLink
-            to="/dutyflex"
-            className="text-cyan-400 flex items-center gap-2"
-            onClick={() => setMenuOpen(false)}
-          >
-            Dutyflex <span className="bg-cyan-500 text-[10px] text-white px-1 py-0.5 rounded animate-pulse">NEW</span>
-          </NavLink>
-
           {/* CTA inside menu */}
           <a
             href="https://wa.me/919029965109?text=Hello,%20I’m%20interested%20in%20your%20services."
@@ -115,6 +103,16 @@ const Navbar = () => {
           >
             let's Talk
           </a>
+          <NavLink
+            to="/dutyflex"
+            className="relative z-10 flex items-center gap-2 bg-slate-900 text-white px-6 py-2 rounded font-bold hover:bg-slate-800 transition-all border border-slate-700 hover:border-cyan-400/50 shadow-lg"
+            onClick={() => setMenuOpen(false)}
+          >
+            Dutyflex{" "}
+            <span className="bg-cyan-500 text-[10px] text-white px-1 py-0.5 rounded animate-pulse">
+              NEW
+            </span>
+          </NavLink>
         </div>
       </div>
     </div>
@@ -122,3 +120,16 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// {/* <div className="hidden xl:block cart-shadow relative group py-1.5 overflow-hidden rounded-full w-fit px-6 text-center border border-[#00AEEF] hover:scale-110 transition-all duration-700">
+//   <span className="absolute inset-0 bg-[#4fd3ff3f] -translate-x-full group-hover:translate-x-0 transition-transform duration-700 z-0" />
+//   <a
+//     href="https://wa.me/919029965109?text=Hello,%20I’m%20interested%20in%20your%20services."
+//     target="_blank"
+//     rel="noopener noreferrer"
+//     className="relative z-10 subHeading xl:text-[18px]"
+//   >
+//     let's Talk
+//     {/* Start a Conversation */}
+//   </a>
+// </div> */}

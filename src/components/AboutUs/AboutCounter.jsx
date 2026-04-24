@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { countersData } from "../../Data/AboutData";
 import { TbPlus } from "react-icons/tb";
-
+import { motion } from "framer-motion";
 
 function Counter() {
   const sectionRef = useRef(null);
@@ -51,24 +51,37 @@ function Counter() {
   };
 
   return (
-    // bg-[#F6EEE3]
-    <section className=" topmain">
-      <div className="main  border-blue-900">
+    <section className="topmain">
+      <div className="main">
         <div
           ref={sectionRef}
-          className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-10 justify-center items-center"
+          className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 justify-center items-center"
         >
           {countersData.map((item, index) => (
-            <div
+            <motion.div
               key={item.id}
-              className="cart-shadow  rounded-lg w-full h-35 flex flex-col justify-center items-center gap-2  p-[30px]  transition-all duration-1500 hover:scale-110 hover:bg-[#f0eeeb]"
+              initial={{ y: 0 }}
+              animate={{
+                y: [0, -15, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: index * 0.4,
+              }}
+              className="cart-shadow rounded-2xl w-full h-40 flex flex-col justify-center items-center gap-2 p-[30px] transition-all duration-1500 hover:scale-105 hover:bg-[#f8f9fa] bg-white border border-slate-100"
             >
               <div className="flex justify-center items-center gap-1">
-                <h2 className="mainHeading text-shadow-pro text-black">{counts[index]}</h2>
-                <TbPlus className="icon text-black text-[25px]" />
+                <h2 className="mainHeading text-shadow-pro text-black font-bold">
+                  {counts[index]}
+                </h2>
+                <TbPlus className="icon text-[#00AEEF] text-[25px]" />
               </div>
-              <p className="mainParagraph text-center">{item.label}</p>
-            </div>
+              <p className="mainParagraph text-center font-semibold text-slate-600">
+                {item.label}
+              </p>
+            </motion.div>
           ))}
         </div>
       </div>

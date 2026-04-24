@@ -4,7 +4,7 @@ import { HiArrowRight } from "react-icons/hi2";
 
 const Overview = () => {
   return (
-    <div className="main flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-35">
+    <div className="main flex-col lg:flex-row items-center justify-between gap-12 w-full 2xl:px-50">
       {/* Left Content */}
       <motion.div 
         initial={{ opacity: 0, x: -30 }}
