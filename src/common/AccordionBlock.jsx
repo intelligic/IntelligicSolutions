@@ -18,7 +18,7 @@ const AccordionBlock = (props) => {
       type="single"
       collapsible
       defaultValue={defaultOpen}
-      className={`w-full border flex flex-col gap-3 ${className}`}
+      className={`w-full flex flex-col gap-3 ${className}`}
     >
       {data.map((item, index) => (
         <AccordionItem

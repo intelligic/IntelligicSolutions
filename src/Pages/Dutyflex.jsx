@@ -8,8 +8,8 @@ const Dutyflex = () => {
   return (
     <div className="w-full">
       <SEO
-        title="DutyFlex – Security Workforce Management Platform"
-        description="DutyFlex is a cloud-based security guard management platform that streamlines scheduling, attendance tracking, payroll, and reporting. Manage your security workforce efficiently with real-time monitoring and automated operations."
+        title="DutyFlex by Intelligic Solutions – Security Workforce Management Platform"
+        description="DutyFlex by Intelligic Solutions is a cloud-based security guard management platform that streamlines scheduling, attendance tracking, payroll, and reporting. Manage your security workforce efficiently with real-time monitoring and automated operations."
         url="/dutyflex"
       />
       <section

@@ -11,25 +11,25 @@ const approachData = [
   {
     icon: MdOutlineTrackChanges,
     title: "Operational Efficiency",
-    description: "Automate routine processes like attendance tracking, shift scheduling, and payroll to minimize manual effort and reduce errors.",
+    description: "Automate routine processes with Intelligic Solutions’ DutyFlex, including attendance tracking, shift scheduling, and payroll to reduce manual effort and minimize errors.",
     color: "bg-blue-50 text-blue-600"
   },
   {
     icon: MdOutlineVisibility,
     title: "Real-Time Visibility",
-    description: "Monitor guard activities, checkpoints, and attendance in real time with a centralized dashboard and mobile integration.",
+    description: "Monitor guard activities, checkpoints, and attendance in real time with Intelligic Solutions’ DutyFlex, through a centralized dashboard and mobile integration.",
     color: "bg-indigo-50 text-indigo-600"
   },
   {
     icon: MdOutlinePeopleOutline,
     title: "Smart Workforce Management",
-    description: "Digitally manage your entire security team with structured workflows, ensuring accountability and smooth operations.",
+    description: "Digitally manage your entire security workforce with Intelligic Solutions’ DutyFlex, using structured workflows that ensure accountability and seamless operations.",
     color: "bg-cyan-50 text-cyan-600"
   },
   {
     icon: MdOutlineShield,
     title: "Reliability & Control",
-    description: "Maintain complete control over your operations with accurate data, audit logs, and transparent reporting systems.",
+    description: "Maintain complete control over your operations with Intelligic Solutions’ DutyFlex, using accurate data, audit logs, and transparent reporting systems.",
     color: "bg-sky-50 text-sky-600"
   }
 ];
@@ -71,7 +71,7 @@ const Approach = () => {
               <h3 className="text-2xl font-bold text-slate-900">
                 {item.title}
               </h3>
-              <p className="mainParagraph text-slate-600 leading-relaxed">
+              <p className="mainParagraph text-slate-600 leading-relaxed text-left">
                 {item.description}
               </p>
             </div>

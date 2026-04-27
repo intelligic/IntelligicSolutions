@@ -5,8 +5,8 @@ import { HiSparkles } from "react-icons/hi2";
 const AboutChoose = () => {
   return (
     <section className="topmain">
-      <div className="flex flex-col items-center justify-between w-full main lg:flex-row">
-        <div className="flex flex-col items-center justify-center w-full gap-14">
+      <div className="flex flex-col items-center justify-center w-full main lg:flex-row">
+        <div className="flex flex-col items-center justify-center w-[80%] gap-14">
           {/* Heading Section */}
           <div className="flex flex-col items-center justify-center w-full gap-4 md:items-start ">
             {/* heading */}

@@ -24,17 +24,10 @@ const Overview = () => {
         
         <div className="flex flex-col gap-6">
           <p className="mainParagraph text-slate-600 leading-relaxed text-left text-lg">
-            DutyFlex is a cloud-based security workforce management platform
-            designed to simplify and optimize guard operations across
-            organizations. It brings together scheduling, attendance tracking,
-            payroll processing, and reporting into one unified system.
+            DutyFlex by Intelligic Solutions is a cloud-based security workforce management platform designed to simplify and optimize guard operations across organizations. It brings together scheduling, attendance tracking, payroll processing, and reporting into one unified system.
           </p>
           <p className="mainParagraph text-slate-600 leading-relaxed text-left text-lg">
-            Built for modern security teams, DutyFlex enables real-time visibility
-            into field activities, reduces manual processes, and ensures accurate,
-            data-driven decision-making. From managing daily shifts to generating
-            compliance-ready reports, everything is streamlined for efficiency
-            and control.
+            Built for modern security teams, DutyFlex enables real-time visibility into field activities, reduces manual processes, and ensures accurate, data-driven decision-making. From managing daily shifts to generating compliance-ready reports, everything is streamlined for efficiency and control.
           </p>
         </div>
         
@@ -45,6 +38,7 @@ const Overview = () => {
           Explore DutyFlex Platform 
           <HiArrowRight className="group-hover:translate-x-1 transition-transform" />
         </a>
+
       </motion.div>
 
       {/* Right Image Container */}

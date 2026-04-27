@@ -11,7 +11,7 @@ const SkillsSection = () => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setStart(true);
-          observer.disconnect(); // 🔑 ek baar hi chale
+          observer.disconnect(); //
         }
       },
       { threshold: 0.4 } // 40% visible hone par trigger
@@ -25,9 +25,9 @@ const SkillsSection = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="flex justify-center items-center w-full">
-      <div className="flex justify-center items-center p-2 w-full">
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-8 sm:gap-15 p-5 valBox-Shadow  rounded-lg  w-fit mx-auto place-items-center">
+    <div ref={sectionRef} className="flex justify-start items-center w-full ">
+      <div className="flex justify-start items-center w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-4 gap-8 sm:gap-15 valBox-Shadow  rounded-lg w-fit items-center justify-start">
           {Skills.map((skill, i) => (
             <CircularProgress
               key={i}

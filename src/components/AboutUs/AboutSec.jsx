@@ -9,9 +9,9 @@ const AboutSec = () => {
   return (
     // bg-[#F6EEE3]
     <section className="topmain">
-      <div className="flex flex-col items-center justify-between w-full main xl:flex-row">
+      <div className="flex flex-col items-start justify-center w-full main xl:flex-row">
         {/* Left Side Sction */}
-        <div className="flex items-center justify-center w-full  xl:w-1/2">
+        <div className="flex items-center justify-center w-full">
           <img
             className="h-auto cart w-140 rounded-2xl"
             src="https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/Images/AboutSec2.png"
@@ -20,7 +20,7 @@ const AboutSec = () => {
         </div>
 
         {/* Right Side Bar */}
-        <div className="flex flex-col items-start justify-center w-full gap-12  xl:w-1/2">
+        <div className="flex flex-col items-center justify-center w-full gap-12">
           {/* Heading */}
           <div className="flex flex-col items-center justify-center w-full gap-5 ">
             {/* this Div is for heading  */}

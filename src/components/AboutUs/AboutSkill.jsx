@@ -9,26 +9,26 @@ const AboutSkill = () => {
 
   return (
     <section className="topmain">
-      <div className="main flex flex-col xl:flex-row justify-between items-center w-full gap-12 sm:gap-16">
+      <div className="main flex flex-col xl:flex-row justify-between items-center w-[80%] gap-5 sm:gap-16">
         {/* left Side Bar */}
-        <div className="w-full xl:w-1/2 flex flex-col justify-center items-center gap-8">
+        <div className="w-1/2 flex flex-col justify-center items-start gap-8">
           {/* Heading */}
-          <div className="w-full flex flex-col justify-center items-center lg:items-start gap-4">
+          <div className="w-full flex flex-col justify-center items-start gap-4">
             <div className="w-fit subheadingbg flex justify-center items-start gap-3">
               <HiSparkles className="iconHeading" />
               <h1 className="subHeading">Our Skills</h1>
             </div>
-            <h2 className="mainHeading text-center lg:text-start">
+            <h2 className="mainHeading text-start">
               The Software of Your Thoughts
             </h2>
-            <p className="mainParagraph text-center lg:text-start">
+            <p className="mainParagraph text-start">
               We transform your ideas into powerful, user-friendly software
               solutions, combining creativity and technology to turn visions
               into impactful digital realities.
             </p>
           </div>
           {/* Progress Bar  */}
-          <div className="w-full flex flex-col justify-center items-center">
+          <div className="w-full flex justify-start items-start">
             <SkillsSection />
           </div>
         </div>
@@ -40,7 +40,7 @@ const AboutSkill = () => {
             <PiGameControllerFill className="text-9xl text-white -rotate-12" />
           </div>
           
-          <div className="relative z-10 flex flex-col items-center text-center gap-6">
+          <div className="relative z-10 flex flex-col items-center text-center gap-6 w-full">
             <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-2">
               <HiSparkles className="text-white text-3xl animate-pulse" />
             </div>
@@ -49,14 +49,14 @@ const AboutSkill = () => {
               Play Smart.<br />Save Instantly.
             </h3>
             
-            <p className="text-white/80 text-base md:text-lg font-medium leading-relaxed max-w-xs">
-              Turn a quick game into real value. Play now and unlock an exclusive 5% to 10% instant discount.
+            <p className="text-white/80 text-base md:text-lg font-medium leading-relaxed max-w-xs w-120">
+              Turn a quick game into real value. Play now and unlock an exclusive 5% to 10% instant discount on any of our services — from web development to digital solutions.
             </p>
 
             <div className="flex flex-col items-center gap-4 mt-4 w-full">
                <button 
                  onClick={() => setIsGameOpen(true)}
-                 className="w-full bg-white text-[#00AEEF] font-black px-8 py-4 rounded-2xl text-lg shadow-xl hover:bg-gray-50 transition-all active:scale-95 flex items-center justify-center gap-2 group/btn"
+                 className="w-fit bg-white text-[#00AEEF] font-black px-8 py-4 rounded-2xl text-lg shadow-xl hover:bg-gray-50 transition-all active:scale-95 flex items-center justify-center gap-2 group/btn"
                >
                  Start the Game
                  <PiArrowBendDoubleUpRightBold className="text-2xl transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />

@@ -2,7 +2,7 @@
 
 @layer base {
   .main {
-    @apply px-5 md:pl-20 lg:pl-20 xl:px-20 2xl:px-25 flex flex-col justify-center items-center w-full gap-8 sm:gap-10 md:gap-12 lg:gap-14;
+    @apply px-5 xl:px-[20px] flex flex-col justify-center items-center gap-8 sm:gap-10;
   }
 
   .topmain {

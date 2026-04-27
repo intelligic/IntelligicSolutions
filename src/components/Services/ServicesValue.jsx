@@ -6,7 +6,7 @@ import { HiSparkles } from "react-icons/hi2";
 const ServicesValue = () => {
   return (
     <section className="topmain">
-      <div className="main flex flex-col xl:flex-row justify-between items-center  w-full">
+      <div className="main flex flex-col xl:flex-row justify-between items-center  w-[80%]">
         {/* left Side Bar */}
         <div className=" w-full xl:w-1/2 flex flex-col justify-center items-start gap-8">
           {/* Heading */}

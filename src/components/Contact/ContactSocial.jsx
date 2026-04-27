@@ -27,7 +27,7 @@ const ContactSocial = () => {
           </div>
 
           {/* for Social Account  details */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 justify-center items-center gap-10 xl:gap-14  3xl:w-400">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 justify-center items-center gap-10 xl:gap-10  w-[80%]">
             {ContactSocialData.map((item, index) => {
               const Icon = item.icons;
               const Content = (

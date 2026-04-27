@@ -37,7 +37,7 @@ export const ServiceDetails = [
     {
         id:6,
         title:"UI/UX Design and Prototyping",
-        image:"https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/ServiceImg/gradientbackground.avif",
+        image:"https:/raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/ServiceImg/UI-UX.jpg",
         description:"User interface and user experience design are the foundation of every successful digital product. We create UI/UX designs that focus on simplicity, usability, and visual appeal. Prototypes are developed to test functionality and flow before final development, saving time and costs. By combining design creativity with user behavior insights, we build experiences that engage and retain customers. From wireframes to polished interfaces, our designs ensure that your digital platforms are intuitive and enjoyable to use.",
     },
 
@@ -64,8 +64,8 @@ export const ServiceDetails = [
 
     {
         id:10,
-        title:"https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/ServiceImg/Strategic_Logistics.png",
-        image:"/Assets/ServiceImg/Strategic Planning and Logistics.png",
+        title:"Strategic Planning and Logistics",
+        image:"https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/ServiceImg/Strategic_Logistics.png",
         description:"Successful business operations require strong planning and execution. We provide strategic planning and logistics support to ensure your projects and events run smoothly. From resource management to execution, we handle every detail with precision. Our team combines experience with creativity to build strategies that align with your business goals. Whether it’s a campaign, event, or long-term project, we help you achieve results efficiently and effectively.",
     },
 
@@ -79,7 +79,7 @@ export const ServiceDetails = [
     {
         id:12,
         title:"On-Site Coordination and Support",
-        image:"https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/ServiceImg/onsite-bim-staffing.jpg.webp",
+        image:"https://raw.githubusercontent.com/intelligic/Project-Assets/main/Intelligic/ServiceImg/onsite-co-ordination.jpg",
         description:"Events and exhibitions require flawless execution. Our on-site coordination and support services ensure everything runs smoothly, from setup to customer engagement. We handle logistics, manage schedules, and oversee operations in real-time. With a dedicated team by your side, you can focus on building relationships while we take care of the details. Our goal is to provide seamless support that guarantees successful events and positive brand experiences.",
     },
 ]

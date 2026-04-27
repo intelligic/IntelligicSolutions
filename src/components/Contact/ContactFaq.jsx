@@ -36,7 +36,7 @@ const ContactFaq = () => {
 
             {/* About Features */}
             <div className="w-full flex flex-col justify-center items-center gap-6">
-              <div className="flex  justify-center items-center gap-4">
+              <div className="flex justify-center items-center gap-4">
                 <FaQuora className="icon transition-all duration-700 hover:scale-110 hover:text-blue-500" />
                 <h3 className="subHeading">About Features</h3>
               </div>

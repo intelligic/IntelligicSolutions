@@ -52,7 +52,7 @@ function Counter() {
 
   return (
     <section className="topmain">
-      <div className="main">
+      <div className="main w-[80%]">
         <div
           ref={sectionRef}
           className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 justify-center items-center"

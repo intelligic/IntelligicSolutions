@@ -21,7 +21,7 @@ const ServiceSec = () => {
 // bg-[#F6EEE3]
   return (
     <section className="topmain">
-      <div className="main w-full">
+      <div className="main w-[80%]">
         <div className="  w-full flex flex-col justify-center items-center gap-8">
           {/* SectionHeading Section */}
           <div className="w-full flex flex-col justify-center items-center gap-4">

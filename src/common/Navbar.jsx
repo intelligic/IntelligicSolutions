@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { SiWhatsapp } from "react-icons/si";
+import { FaInstagram, FaFacebookF, FaGlobe } from "react-icons/fa";
 
 
 const navLinks = [
@@ -10,11 +11,11 @@ const navLinks = [
   { name: "Services", path: "/services" },
   // { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
-  // { name: "Dutyflex", path: "/dutyflex" },
 ];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [desktopSidebarOpen, setDesktopSidebarOpen] = useState(false);
 
   return (
     <div className="fixed top-0 left-0 z-40 w-full border border-b bg-gradient-brand-500-300-200 h-18">
@@ -37,17 +38,17 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="flex justify-center items-center gap-8">
+        <div className="flex items-center justify-center gap-8">
           {/* Unique & Attractive Dutyflex Button */}
-          <div className="hidden xl:block relative group">
+          <div className="relative hidden xl:block group">
             {/* Pulsing Glow Background */}
-            <span className="absolute inset-0 bg-cyan-400 rounded-full blur-md opacity-20 group-hover:opacity-50 animate-pulse transition-opacity" />
+            <span className="absolute inset-0 transition-opacity rounded-full bg-cyan-400 blur-md opacity-20 group-hover:opacity-50 animate-pulse" />
 
             <NavLink
               to="/dutyflex"
-              className="relative z-10 flex items-center gap-2 bg-slate-900 text-white px-6 py-2 rounded-full font-bold hover:bg-slate-800 transition-all border border-slate-700 hover:border-cyan-400/50 shadow-lg"
+              className="relative z-10 flex items-center gap-2 px-6 py-2 font-bold text-white transition-all border rounded-full shadow-lg bg-slate-900 hover:bg-slate-800 border-slate-700 hover:border-cyan-400/50"
             >
-              Dutyflex
+              DutyFlex
               <span className="bg-cyan-500 text-[10px] text-white px-1.5 py-0.5 rounded-md leading-none animate-bounce uppercase tracking-tighter">
                 New
               </span>
@@ -59,7 +60,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="relative z-10 subHeading xl:text-[18px] hidden xl:block"
           >
-            <SiWhatsapp className="text-3xl text-green-500 hover:text-green-700 transition-all duration-700 hover:scale-110" />
+            <SiWhatsapp className="text-3xl text-green-500 transition-all duration-700 hover:text-green-700 hover:scale-110" />
           </a>
         </div>
 
@@ -107,7 +108,7 @@ const Navbar = () => {
           </a>
           <NavLink
             to="/dutyflex"
-            className="relative z-10 flex items-center gap-2 bg-slate-900 text-white px-6 py-2 rounded font-bold hover:bg-slate-800 transition-all border border-slate-700 hover:border-cyan-400/50 shadow-lg"
+            className="relative z-10 flex items-center gap-2 px-6 py-2 font-bold text-white transition-all border rounded shadow-lg bg-slate-900 hover:bg-slate-800 border-slate-700 hover:border-cyan-400/50"
             onClick={() => setMenuOpen(false)}
           >
             Dutyflex{" "}

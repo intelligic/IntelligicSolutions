@@ -1,13 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { RiArrowRightUpLine } from "react-icons/ri";
 import { HiCheckCircle } from "react-icons/hi";
 
 const features = [
-  "Centralized control of security operations",
-  "Accurate and automated attendance tracking",
-  "Seamless payroll and billing management",
-  "Mobile-enabled workforce with real-time updates",
-  "Detailed reports for compliance and transparency"
+  "Centralized and scalable security operations management",
+  "Smart, automated attendance tracking with high accuracy",
+  "Streamlined payroll and billing processes for efficient workforce handling",
+  "Real-time workforce visibility through mobile integration",
+  "Comprehensive reporting for compliance and operational transparency"
 ];
 
 const Choosedutyflex = () => {
@@ -43,18 +44,18 @@ const Choosedutyflex = () => {
               </motion.li>
             ))}
           </ul>
+          <p className="text-md md:text-lg text-white">Developed by Intelligic Solutions to deliver reliable and efficient workforce management</p>
 
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="mt-6"
           >
-            <a 
-              href="https://dutyflex.com/" 
-              className="bg-white text-[#00AEEF] font-bold py-4 px-10 rounded-xl shadow-lg hover:bg-slate-50 transition-colors inline-block text-lg"
+            <h3 
+              className="bg-white text-[#00AEEF] font-bold py-4 px-10 rounded-xl shadow-lg hover:bg-slate-50 transition-colors text-lg flex gap-3 w-fit"
             >
-              Explore DutyFlex Platform
-            </a>
+              For more information, contact info@intelligic.org <RiArrowRightUpLine />
+            </h3>
           </motion.div>
         </div>
 
